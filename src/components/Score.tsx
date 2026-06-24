@@ -47,21 +47,21 @@ const Score = ({ results }: ScoreProps) => {
     return (
         <div className={styles.score} role="group">
             <div className={styles.scoreWrapper}>
-                <h3 className="sr-only">Score</h3>
+                <h2 className="sr-only">Score</h2>
                 <ul className={styles.scoreList}>
                     <li>
                         <span className="sr-only">{`Player X victories, ${xVictories}`}</span>
-                        <h4 className={styles.scoreItemTitle} aria-hidden="true">Player X</h4>
+                        <h3 className={styles.scoreItemTitle} aria-hidden="true">Player X</h3>
                         <ScoreCounter value={xVictories} />
                     </li>
                     <li>
                         <span className="sr-only">{`Draws, ${draws}`}</span>
-                        <h4 className={styles.scoreItemTitle} aria-hidden="true">Draws</h4>
+                        <h3 className={styles.scoreItemTitle} aria-hidden="true">Draws</h3>
                         <ScoreCounter value={draws} />
                     </li>
                     <li>
                         <span className="sr-only">{`Player O victories, ${oVictories}`}</span>
-                        <h4 className={styles.scoreItemTitle} aria-hidden="true">Player O</h4>
+                        <h3 className={styles.scoreItemTitle} aria-hidden="true">Player O</h3>
                         <ScoreCounter value={oVictories} />
                     </li>
                 </ul>

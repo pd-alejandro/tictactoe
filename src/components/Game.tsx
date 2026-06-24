@@ -88,7 +88,7 @@ const Game = () => {
                                     {(round > 1 && (!winner && !draw)) ? `Current round: ${round}` : ''}
                                 </div>
                                 <div aria-hidden="true">
-                                    <h3 className={styles.title}>Round</h3>
+                                    <h2 className={styles.title}>Round</h2>
                                     <div className={styles.roundListWrapper}>
                                         <ul className={styles.roundList} style={{
                                             '--r': `${round}`
@@ -112,7 +112,7 @@ const Game = () => {
                                     {(round > 1 && (!winner && !draw)) ? `Current player: ${xIsNext ? 'x' : 'o'}` : ''}
                                 </div>
                                 <div aria-hidden="true">
-                                    <h3 className={styles.title}>{winner ? 'Winner' : 'Player'}</h3>
+                                    <h2 className={styles.title}>{winner ? 'Winner' : 'Player'}</h2>
                                     <div className={styles.playerListWrapper}>
                                         <ul className={styles.playerList} data-currentplayer={xIsNext ? "x" : "o"} style={{ '--p': `${xIsNext ? 1 : 2}` } as React.CSSProperties}>
                                             <li className={styles.player}>
