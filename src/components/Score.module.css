@@ -96,3 +96,11 @@
         display: none;
     }
 }
+
+@media (forced-colors: active) {
+    .score {
+        background: var(--fc-bg);
+        border: 1px solid var(--fc-border);
+        box-shadow: none;
+    }
+}

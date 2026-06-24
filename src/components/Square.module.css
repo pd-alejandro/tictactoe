@@ -28,7 +28,7 @@
     }
 
     @media (hover: hover) {
-        &:not(:disabled):hover {
+        &:not([aria-disabled]):hover {
             background-color: var(--square-bg--hover);
 
             &::after {
@@ -36,7 +36,7 @@
             }
         }
 
-        &:not(:disabled):active {
+        &:not([aria-disabled]):active {
             background-color: var(--square-bg--active);
             transform: scale(0.95);
         }
@@ -110,6 +110,19 @@
             .square {
                 border-right: 8px solid #000;
             }
+        }
+    }
+}
+
+@media (forced-colors: active) {
+    .square {
+        background-color: unset;
+        border: 2px solid var(--fc-border);
+        box-shadow: none;
+
+        &:hover,
+        &:focus {
+            outline: 3px solid Highlight;
         }
     }
 }

@@ -37,3 +37,12 @@
         }
     }
 }
+
+
+@media (forced-colors: active) {
+    .gameMenu {
+        background: var(--fc-bg);
+        border: 1px solid var(--fc-border);
+        box-shadow: none;
+    }
+}

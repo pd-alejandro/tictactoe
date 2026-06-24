@@ -226,3 +226,20 @@ button.menuBtn {
         opacity: 0;
     }
 }
+
+@media (forced-colors: active) {
+
+    .roundWrapper,
+    .playerWrapper {
+        background: var(--fc-bg);
+        border: 1px solid var(--fc-border);
+        box-shadow: none;
+    }
+
+    button.menuBtn,
+    .toast {
+        background: var(--fc-bg);
+        border: 2px solid var(--fc-border);
+        box-shadow: none;
+    }
+}
