@@ -13,6 +13,7 @@
     translate: 0 -8px;
     transform: scale(0.95);
     transition:
+        background-color var(--time-s) ease-in,
         transform var(--time-s) ease-in,
         translate var(--time-s) ease-in,
         opacity var(--time-s) ease-in,

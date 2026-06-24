@@ -7,7 +7,8 @@
     border-radius: 16px;
     box-shadow: var(--shadow-dec);
     transition: opacity var(--time-m) ease-in,
-        transform var(--time-m) ease-in;
+        transform var(--time-m) ease-in,
+        background-color var(--time-s) ease-in;
 
     @starting-style {
         opacity: 0;
@@ -53,6 +54,7 @@
 
         &:not(:last-of-type) {
             border-right: 1px solid var(--decoration-color);
+            transition: border-color var(--time-s) ease-in;
         }
 
     }

@@ -37,7 +37,8 @@
     background-color: var(--game-data-bg);
     box-shadow: var(--shadow-dec);
     transition: opacity var(--time-m) ease-in,
-        transform var(--time-m) ease-in;
+        transform var(--time-m) ease-in,
+        background-color var(--time-s) ease-in;
 
     &>div:has(.playerListWrapper) {
         display: flex;
@@ -143,7 +144,8 @@ button.menuBtn {
     aspect-ratio: 1 / 1;
     padding: 1.25rem;
     transition: opacity var(--time-s) ease-in,
-        transform var(--time-s) ease-in;
+        transform var(--time-s) ease-in,
+        background-color var(--time-s) ease-in;
 
     &:not(:disabled) {
         @media (hover: hover) {
@@ -196,7 +198,9 @@ button.menuBtn {
     color: var(--toast-color);
     background-color: var(--toast-bg);
     box-shadow: var(--shadow-2);
-    transition: opacity var(--time-m) ease-in,
+    transition:
+        background-color var(--time-s) ease-in,
+        opacity var(--time-m) ease-in,
         transform var(--time-m) ease-in;
     animation: fadeOutToast 10s forwards;
 
