@@ -201,7 +201,10 @@ button.menuBtn {
         background-color var(--time-s) ease-in,
         opacity var(--time-m) ease-in,
         transform var(--time-m) ease-in;
-    animation: fadeOutToast 10s forwards;
+
+    @media (prefers-reduced-motion: no-preference) {
+        animation: fadeOutToast 10s forwards;
+    }
 
     & button {
         display: contents;
