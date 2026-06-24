@@ -181,7 +181,7 @@ body {
 
 main {
   grid-row: 2 / 4;
-  display: subgrid;
+  display: grid;
   grid-template-rows: subgrid;
 }
 

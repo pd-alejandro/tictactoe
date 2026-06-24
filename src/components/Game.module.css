@@ -7,14 +7,11 @@
 
 .gameWrapper {
     display: grid;
-    grid-template-areas: "header"
-        "board";
-    grid-template-rows: 4rem 1fr;
+    grid-template-rows: auto 1fr auto;
     min-height: 100%;
 }
 
 .gameHeader {
-    grid-area: header;
     display: flex;
     justify-content: space-between;
     align-items: center;
