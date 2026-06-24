@@ -1,0 +1,98 @@
+.score {
+    position: relative;
+    display: grid;
+    margin: 0 auto;
+    color: var(--score-color);
+    background-color: var(--score-bg);
+    border-radius: 16px;
+    box-shadow: var(--shadow-dec);
+    transition: opacity var(--time-m) ease-in,
+        transform var(--time-m) ease-in;
+
+    @starting-style {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.scoreWrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1rem 2rem;
+    min-width: 280px;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    width: min(320px, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    border-radius: 16px;
+    overflow-y: auto;
+}
+
+.scoreList {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+
+    & li {
+        grid-row: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+        grid-template-rows: subgrid;
+        justify-items: stretch;
+        align-items: stretch;
+        padding: 0 1rem;
+        font-size: 1.25rem;
+
+        &:not(:last-of-type) {
+            border-right: 1px solid var(--decoration-color);
+        }
+
+    }
+}
+
+.scoreItemTitle {
+    grid-row: 1;
+    margin: 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap: nowrap;
+}
+
+.scoreItemValue {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    overflow: hidden;
+}
+
+.scoreSlot {
+    height: 100%;
+    flex-shrink: 0;
+    display: flex;
+    place-items: center;
+    transform: translateY(var(--y, 0%));
+    transition: transform var(--speed, 0s) ease-in-out;
+}
+
+@media print {
+    .score {
+        display: none;
+    }
+}

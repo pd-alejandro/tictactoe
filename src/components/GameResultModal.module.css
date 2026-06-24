@@ -1,0 +1,18 @@
+.gameResult {
+    &>.gameResultWrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    & .title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 0;
+    }
+}
+
+.img {
+    margin: 1.5rem;
+    font-size: 5rem;
+}

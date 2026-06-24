@@ -1,0 +1,228 @@
+.game {
+    position: absolute;
+    inset: 0;
+    padding: 1rem;
+    min-height: 100%;
+}
+
+.gameWrapper {
+    display: grid;
+    grid-template-areas: "header"
+        "board";
+    grid-template-rows: 4rem 1fr;
+    min-height: 100%;
+}
+
+.gameHeader {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dataWrapper {
+    display: flex;
+    column-gap: 1rem;
+}
+
+.roundWrapper,
+.playerWrapper {
+    display: flex;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    width: 4rem;
+    padding: 0.5rem;
+    border-radius: 16px;
+    color: var(--game-data-color);
+    background-color: var(--game-data-bg);
+    box-shadow: var(--shadow-dec);
+    transition: opacity var(--time-m) ease-in,
+        transform var(--time-m) ease-in;
+
+    &>div:has(.playerListWrapper) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & .title {
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 0;
+        line-height: 1;
+        text-align: center;
+    }
+
+    @starting-style {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+.roundListWrapper {
+    width: 100%;
+    height: 2.25rem;
+    overflow: hidden;
+}
+
+.roundList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform: translateY(calc((var(--r) - 1) * (10/ 90 * -100%)));
+    transition: transform var(--time-m) ease-in;
+
+    &>li {
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: bolder;
+        text-align: center;
+        transition: transform var(--time-s) ease-in;
+    }
+
+    &>li:not(.current) {
+        transform: scale(0.5);
+    }
+}
+
+[data-state="game--resetting"] .roundList>li:not(.current) {
+    transform: scale(1);
+}
+
+.playerListWrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.playerList {
+    list-style: none;
+    display: flex;
+    flex-shrink: 0;
+    width: 200%;
+    padding: 0;
+    margin: 0;
+    transform: translateX(calc((var(--p) - 1) * -50%));
+    transition: transform var(--time-m) ease-in;
+
+    &>li {
+        width: 50%;
+        margin: 0;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        font-weight: bolder;
+        text-align: center;
+    }
+}
+
+[data-state="game--resetting"] :where(.roundList, .playerList) {
+    transition-duration: var(--time-m);
+}
+
+.player {
+    display: flex;
+    place-items: center;
+    transition: transform var(--time-s) ease-in;
+
+    & [class^="icon"] {
+        width: 20px;
+    }
+}
+
+[data-currentplayer="x"] .player:has([class$="iconO"]),
+[data-currentplayer="o"] .player:has([class$="iconX"]) {
+    transform: scale(0.5);
+}
+
+button.menuBtn {
+    --bg: var(--menu-btn-bg);
+    display: block;
+    aspect-ratio: 1 / 1;
+    padding: 1.25rem;
+    transition: opacity var(--time-s) ease-in,
+        transform var(--time-s) ease-in;
+
+    &:not(:disabled) {
+        @media (hover: hover) {
+            &:hover {
+                --bg: var(--menu-btn-bg--hover);
+            }
+        }
+
+        &:active {
+            --bg: var(--menu-btn-bg--active);
+        }
+    }
+
+    @starting-style {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
+
+@media print {
+    .gameWrapper {
+        display: flex;
+        justify-content: center;
+    }
+
+    .gameHeader {
+        display: none;
+    }
+}
+
+
+.toastList {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    overflow: hidden;
+
+    & ul {
+        align-items: flex-start;
+    }
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    color: var(--toast-color);
+    background-color: var(--toast-bg);
+    box-shadow: var(--shadow-2);
+    transition: opacity var(--time-m) ease-in,
+        transform var(--time-m) ease-in;
+    animation: fadeOutToast 10s forwards;
+
+    & button {
+        display: contents;
+        color: inherit;
+    }
+
+    & .message {
+        flex: 1;
+    }
+
+    @starting-style {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeOutToast {
+
+    0%,
+    98% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

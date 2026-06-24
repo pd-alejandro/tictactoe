@@ -1,0 +1,39 @@
+.historyWrapper {
+    display: contents;
+}
+
+.historyListWrapper {
+    display: contents;
+
+    & ul {
+        grid-row: 2;
+        min-height: 0;
+        margin: 0 0 1rem;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        mask-image: linear-gradient(to bottom,
+                transparent,
+                black 1rem,
+                black calc(100% - 1rem),
+                transparent);
+    }
+
+    & li {
+        height: auto;
+        padding: 0.5rem;
+        font-size: 1.125rem;
+        translate: 0 0;
+        overflow: hidden;
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid var(--decoration-color);
+        }
+    }
+
+}
+
+.listMatch {
+    display: inline-block;
+    width: 4ch;
+    font-weight: 500;
+}

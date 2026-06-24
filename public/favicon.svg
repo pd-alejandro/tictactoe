@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <style>
+    /* Casilla frontal (la más brillante) */
+    .card-front { fill: #FFFFFF; rx: 6px; }
+    .text-front { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 16px; fill: #1E1B4B; text-anchor: middle; dominant-baseline: central; }
+    
+    /* Casilla intermedia (semi-transparente) */
+    .card-mid { fill: rgba(255, 255, 255, 0.75); rx: 6px; }
+    .text-mid { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 16px; fill: rgba(30, 27, 75, 0.75); text-anchor: middle; dominant-baseline: central; }
+    
+    /* Casilla del fondo (más transparente) */
+    .card-back { fill: rgba(255, 255, 255, 0.45); rx: 6px; }
+    .text-back { font-family: 'Segoe UI', system-ui, sans-serif; font-weight: 800; font-size: 16px; fill: rgba(30, 27, 75, 0.45); text-anchor: middle; dominant-baseline: central; }
+
+    /* Sombra suave para separar los bloques superpuestos */
+    .block-shadow { fill: rgba(0, 0, 0, 0.12); filter: blur(3px); }
+  </style>
+
+  <g id="casilla-fondo">
+    <rect x="49" y="19" width="32" height="32" rx="6" class="block-shadow" />
+    <rect x="47" y="17" width="32" height="32" class="card-back" />
+    <text x="63" y="33" class="text-back">T</text>
+  </g>
+
+  <g id="casilla-medio">
+    <rect x="36" y="36" width="32" height="32" rx="6" class="block-shadow" />
+    <rect x="34" y="34" width="32" height="32" class="card-mid" />
+    <text x="50" y="50" class="text-mid">T</text>
+  </g>
+
+  <g id="casilla-frente">
+    <rect x="23" y="53" width="32" height="32" rx="6" class="block-shadow" />
+    <rect x="21" y="51" width="32" height="32" class="card-front" />
+    <text x="37" y="67" class="text-front">T</text>
+  </g>
+</svg>
