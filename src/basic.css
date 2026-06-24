@@ -511,7 +511,8 @@ dialog {
   }
 }
 
-@media (forced-colors: active) {
+@media (forced-colors: active),
+(prefers-contrast: more) {
   body {
     forced-color-adjust: none;
     background: var(--fc-bg);
@@ -525,6 +526,7 @@ dialog {
 
   .btn {
     background-color: unset;
+    color: var(--fc-color);
     border: 2px solid var(--fc-border);
     box-shadow: none;
 
@@ -534,11 +536,16 @@ dialog {
     }
   }
 
+  .btn-secondary {
+    color: var(--fc-color);
+  }
+
   .icon {
     forced-color-adjust: none;
     background-color: light-dark(black, white);
   }
 
+  .btn-primary,
   .btn-danger {
     forced-color-adjust: none;
     color: light-dark(white, black);

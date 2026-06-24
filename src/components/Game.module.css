@@ -230,7 +230,7 @@ button.menuBtn {
     }
 }
 
-@media (forced-colors: active) {
+@media (forced-colors: active), (prefers-contrast: more) {
 
     .roundWrapper,
     .playerWrapper {

@@ -40,7 +40,7 @@
 }
 
 
-@media (forced-colors: active) {
+@media (forced-colors: active), (prefers-contrast: more) {
     .gameMenu {
         background: var(--fc-bg);
         border: 1px solid var(--fc-border);
