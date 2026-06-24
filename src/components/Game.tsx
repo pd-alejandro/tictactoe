@@ -132,26 +132,29 @@ const Game = () => {
                             aria-label='Open menu'>
                             <span className="icon iconMenu" aria-hidden="true" role="img"></span>
                         </button>
+                        <Menu resetBoard={resetBoard} resetAll={resetAll} results={results} round={round} />
                     </header >
-                    <Menu resetBoard={resetBoard} resetAll={resetAll} results={results} round={round} />
-                    <Board squares={squares} onSquareClick={handleSquareClick} isGameOver={!!winner} />
-                    <Score results={results} />
+                    <main>
+                        <Board squares={squares} onSquareClick={handleSquareClick} isGameOver={!!winner} />
+                        <Score results={results} />
+                    </main>
                 </div>
             </div >
-            <div className={styles.toastList}
-                role="region" aria-live='polite' aria-label="Notifications">
+            <section className={styles.toastList}
+                role="log" aria-live='polite' aria-label="Notifications">
                 <ul className='list-unstyled flex-column gap05'>
                     {toasts.map(t =>
                         <li className={styles.toast} key={t.id}>
                             <button
-                                onClick={() => setToasts(prev => prev.filter(toast => toast.id !== t.id))}>
+                                onClick={() => setToasts(prev => prev.filter(toast => toast.id !== t.id))}
+                                aria-label='Dismiss notification'>
                                 <span className='icon iconCheck' aria-hidden="true"></span>
                                 <span className={styles.message}>{t.message}</span>
                             </button>
                         </li>)}
 
                 </ul>
-            </div>
+            </section>
         </>
     );
 }

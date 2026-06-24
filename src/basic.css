@@ -179,6 +179,12 @@ body {
   }
 }
 
+main {
+  grid-row: 2 / 4;
+  display: subgrid;
+  grid-template-rows: subgrid;
+}
+
 .btn {
   --bg: var(--button-bg);
   --color: var(--button-color);

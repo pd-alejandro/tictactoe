@@ -12,6 +12,7 @@
         "s7 s8 s9";
     gap: var(--gap);
     aspect-ratio: 1 / 1;
+    min-width: 280px;
     width: min(320px, calc(100vw - 2rem));
     height: auto;
     transition: opacity var(--time-m) ease-in,

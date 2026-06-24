@@ -2,6 +2,8 @@
     position: relative;
     display: grid;
     margin: 0 auto;
+    min-width: 280px;
+    width: min(320px, calc(100vw - 2rem));
     color: var(--score-color);
     background-color: var(--score-bg);
     border-radius: 16px;
